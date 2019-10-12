@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Complete UI Design Project</title>
+  </head>
+  <body>
+    <div class="proto-container">
+      <div class="proto"></div>
+      <div class="proto"></div>
+      <div class="proto"></div>
+      <div class="proto"></div>
+    </div>
+
+    <div class="container">
+      <div class="inner">
+        <div class="left">
+          <img src="logo_copy.svg" alt="" class="logo" />
+          <div class="content">
+            <h1>Complete <span>UI Design Course</span></h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
+              voluptatibus ut atque omnis voluptate error magnam quasi. Mollitia
+              similique libero minus, dolore neque maxime et.
+            </p>
+            <p class="light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+              amet.
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <p>Get notified when I release this course!</p>
+          <input type="text" name="email" id="email" placeholder="your email" />
+          <button>Notify Me</button>
+          <div class="attention">
+            <img src="me.jpg" alt="" class="me" />
+            <img src="arrow_copy.svg" alt="" class="arrow" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="main.js"></script> -->
+
+    <script>
+      let left = document.querySelector(".left");
+      let content = document.querySelector(".content");
+      let protos = document.querySelectorAll(".proto");
+
+      left.addEventListener("mousemove", event => {
+        let move = event.clientX * 0.05 + 4;
+        let move2 = event.clientX * 0.003;
+        content.style.transform = `translateX(-${move2}%)`;
+
+        protos.forEach(proto => {
+          proto.style.transform = `translateX(${move}%)`;
+        });
+      });
+    </script>
+  </body>
+</html>
